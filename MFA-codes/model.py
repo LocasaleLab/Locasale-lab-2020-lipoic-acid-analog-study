@@ -3,7 +3,7 @@
 
 import itertools as it
 
-import scipy.misc
+import scipy.special
 import scipy.linalg
 import numpy as np
 
@@ -70,7 +70,7 @@ def natural_carbon_mid(carbon_number):
     c12_ratio = 1 - c13_ratio
     new_mid = [0] * (carbon_number + 1)
     for i in range(carbon_number + 1):
-        new_mid[i] = scipy.misc.comb(carbon_number, i) * (c13_ratio ** i) * (c12_ratio ** (carbon_number - i))
+        new_mid[i] = scipy.special.comb(carbon_number, i) * (c13_ratio ** i) * (c12_ratio ** (carbon_number - i))
     return new_mid
 
 
@@ -344,7 +344,7 @@ def calculate_emu_mid_from_original_mid(original_mid, required_emu_string_list):
         required_emu_list.append([bool(int(i)) for i in list(required_emu_string)])
 
     original_percentage_per_carbon_number = [
-        original_mid.mid[i] / (scipy.misc.comb(carbon_number, i, exact=True)) for i in range(carbon_number + 1)]
+        original_mid.mid[i] / (scipy.special.comb(carbon_number, i, exact=True)) for i in range(carbon_number + 1)]
     emu_combination_for_each_carbon_number = [0] * (carbon_number + 1)
     original_percentage_for_each_emu = [0] * (carbon_number + 1)
     for carbon_number_index in range(carbon_number + 1):

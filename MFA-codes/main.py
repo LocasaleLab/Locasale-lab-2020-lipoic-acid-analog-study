@@ -17,9 +17,10 @@ def main():
     experiment are exported to one .csv file. In each experiment, the average and standard deviation of 
     each condition are calculated separately.
     """
-    xlsx_file_name = "13C-Glucose_tracing_Mike.xlsx"
+    xlsx_file_name = "13C-Glucose_tracing_Shree.xlsx"
     xlsx_file_path = "./{}".format(xlsx_file_name)
-    experiment_sheet_list = ["HCT116_WQ2101_PHGDH", "BT20_WQ2101_PHGDH", "HCT116_NCT503_PHGDH"]
+    # experiment_sheet_list = ["HCT116_WQ2101_PHGDH", "BT20_WQ2101_PHGDH", "HCT116_NCT503_PHGDH"]
+    experiment_sheet_list = ["Sheet1"]
     flux_analysis(xlsx_file_path, experiment_sheet_list)
 
 
