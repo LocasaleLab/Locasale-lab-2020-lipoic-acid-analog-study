@@ -1,7 +1,7 @@
-# Reid-et-al-2018
+# Reid-Bose-et-al-2020-CPI-613
 
-Data and codes related to the CPI-613 inhibitor study (Reid et al, Nature Communications 2018)
+Data and codes related to the CPI-613 inhibitor study (Reid, Bose, et al, 2020)
 
-- **MFA-codes**: Codes and U-13C-glucose tracing data used in solving the 13C-metabolic flux analysis (13C-MFA) model
-- **Metabolic flux analysis_Reid et al**: Results of metabolic flux analysis with different cell lines and PHGDH inhibitors
-- **Metabolomics data sets_Reid et al**: Raw metabolomics data for all experiments in the study
+- **Reid, Bose et al_all processed MS data from CPI-613 manuscript.xlsx**: 
+- **Reid, Bose et al._Figure 4 source code**: 
+- **Reid, Bose et al._Figure 5 source code**: 

@@ -10,7 +10,7 @@ This software is developed and tested on Python 3.6. It also relies on Python pa
 
 ## Usages
 
-The input data are in `13C-Glucose_tracing_Mike.xlsx` file. To solve the MFA model, run `main.py`. Results will be displayed in `.csv` files in the same path. Each `.csv` file corresponds to one experiment (one sheet in `13C-Glucose_tracing_Mike.xlsx`).
+The input data are in `13C-Glucose_tracing_Shree.xlsx` file. To solve the MFA model, run `main.py`. Results will be displayed in `.csv` files in the same path. Each `.csv` file corresponds to one experiment (one sheet in `13C-Glucose_tracing_Shree.xlsx`).
 
 ## Contributors
 
