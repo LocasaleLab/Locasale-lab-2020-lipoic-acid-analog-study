@@ -2,39 +2,6 @@
 #                                                            CPI Project Figure 4                                                                       #
 #=======================================================================================================================================================#
 
-library(ggplot2)
-library(ggthemes)
-theme_lasso_mse <- function(base_size=14, base_family="arial") {
-  (theme_foundation(base_size=base_size, base_family=base_family)+
-     theme_classic() +
-     theme(  plot.margin=unit(c(5,5,5,5),"mm"),
-             plot.title = element_text(face = "bold", size = rel(2), hjust = 0.5),
-             # panel.border = element_rect(colour = NA)
-             text = element_text(),
-             axis.title = element_text( size = rel(2)),
-             axis.title.y = element_text(angle=90,vjust =0.5, margin=margin(0,10,0,0,"mm")),
-             axis.title.x = element_text(vjust = -0.2, margin=margin(10,0,0,0,"mm")),
-             axis.text.x = element_text(angle = 0, hjust = 0.5, size = rel(2)),
-             axis.text.y = element_text(angle = 0, hjust = 0.5, size = rel(2)),
-             axis.line = element_line(colour="black", size = rel(2)),
-             axis.ticks = element_line(size = rel(2)),
-             axis.ticks.length = unit(0.5, "cm"),
-             # panel.grid.major = element_line(colour="#f0f0f0"),
-             # panel.grid.minor = element_blank(),
-             legend.key = element_rect(colour = NA),
-             legend.position = "right",
-             legend.direction = "vertical",
-             legend.text = element_text(size = rel(1.75)),
-             legend.key.size= unit(0.2, "cm"),
-             legend.margin = margin(0,0,10,0, "mm"),
-             legend.title = element_blank(),
-             strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
-             strip.text = element_text(face="bold")
-     ))
-}  
-
-cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-
 # reorder matrix according the values of one column i, in decreasing order
 max2min <- function(X, by_i, names_i, decreasing = T){
   K <- X
@@ -51,7 +18,7 @@ max2min <- function(X, by_i, names_i, decreasing = T){
 
 
 # 1. Read Data ---------------------------------------------------------------------------------------------------------------------------
-Baseline_Marrow_Revised <- read.csv('Revised_Baseline_Marrow.csv')
+Baseline_Marrow_Revised <- read.csv('Reid, Bose et al_Figure 4 data set_Bone_Marrow.csv')
 
 
 # 2. MIC Calculation (Fig C) -------------------------------------------------------------------------------------------------------------
@@ -90,6 +57,7 @@ MIC_BaselineMarrowRevised_Tx$MIC <- MIC_BaselineMarrowRevised$MIC[-nrow(MIC_Base
 # return ordered dataframe
 MIC_BaselineMarrowRevised_Tx <-  max2min(MIC_BaselineMarrowRevised_Tx, 2, 1, decreasing = F)
 
+write.csv(MIC_BaselineMarrowRevised_Tx, 'MIC_BaselineMarrowRevised_Tx.csv')
 
 
 # 3. Predicting Response from Metabolites (Fig E,F) --------------------------------------------------------------------------------------
@@ -191,5 +159,5 @@ for(s in metabolite_sets){
       
   }
 }
-write.csv(roc_curves_by_combination, 'ROC_Curves_all_combos.csv')
+write.csv(roc_curves_by_combination, 'ROC_Curves.csv')
 # ----------------------------------------------------------------------------------------------------------------------------------------
