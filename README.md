@@ -1,4 +1,4 @@
-# Reid-Bose-et-al-2020-CPI-613
+# Locasale Lab, 2020, Lipoic Acid Analog Study
 
 Data and codes related to the CPI-613 inhibitor study (Reid, Bose, et al, 2020)
 
